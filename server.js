@@ -5,7 +5,8 @@
     var morgan   = require('morgan');                // log requests to the console (express4)
     var bodyParser = require('body-parser');         // pull information from HTML POST (express4)
     var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
-    var database = 'mongodb+srv://andrew1:abcd1234@cluster0-7irin.mongodb.net/test?retryWrites=true&w=majority'
+    var database = 'mongodb://heroku_43pf18rf:gsd2dp3gc0g9pivqratbsjk339@ds127892.mlab.com:27892/heroku_43pf18rf'
+    // var database = 'mongodb+srv://andrew1:abcd1234@cluster0-7irin.mongodb.net/test?retryWrites=true&w=majority'
     var port     = process.env.PORT || 8888;         // set the port
 
     // configuration ===============================================================
