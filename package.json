@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@angular-devkit/schematics": "^9.1.0",
     "angular": "^1.7.9",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
