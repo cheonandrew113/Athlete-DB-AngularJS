@@ -1,2 +1,2 @@
 # Athlete-DB-AngularJS
-![picture]('/Asset/angularCRUD.png')
+![](https://github.com/cheonandrew113/Athlete-DB-AngularJS/blob/master/Asset/angularCRUD.png)
