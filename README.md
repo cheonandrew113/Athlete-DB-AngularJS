@@ -1,2 +1,2 @@
 # Athlete-DB-AngularJS
-![alt text]('./Asset/angularCRUD.png')
+![picture]('./Asset/angularCRUD.png')
