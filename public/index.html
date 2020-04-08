@@ -1,0 +1,79 @@
+<html ng-app="bogoAthlete">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Node/Angular Athlete App</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #athlete-list              { margin-bottom:30px; }
+    </style>
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script><!-- load angular -->
+    <script src="js/core.js"></script>
+    <script src="js/controllers/main.js"></script> <!-- load up our controller -->
+    <script src="js/services/athletes.js"></script> <!-- load our athlete service -->
+    <script src="js/core.js"></script> <!-- load our main application -->
+
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL ATHLETES -->
+<body ng-controller="mainController">
+    <div class="container">
+
+        <!-- HEADER AND ATHLETES COUNT -->
+        <div class="jumbotron text-center">
+            <h1>My Athlete List <span class="label label-info">{{ athletes.length }}</span></h1>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr >
+                    <th style="text-align: center">Image</th>
+                    <th style="text-align: center">Name</th>
+                    <th style="text-align: center">Sport</th>
+                    <th style="text-align: center">Nationality</th>
+                    <th style="text-align: center">Association</th>
+                    <th style="text-align: center">Team</th>
+                    <th style="text-align: center">Action</th>
+                    <th style="text-align: center">&nbsp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="text-align: center;">
+                    <td><input class="form-control" ng-model="formData.image" placeholder="Enter Image URL"></td>
+                    <td><input class="form-control" ng-model="formData.name" placeholder="Enter Name"></td>
+                    <td><input class="form-control" ng-model="formData.sport" placeholder="Enter Sport"></td>
+                    <td><input class="form-control" ng-model="formData.nationality" placeholder="Enter Nationality"></td>
+                    <td><input class="form-control" ng-model="formData.association" placeholder="Enter Association"></td>
+                    <td><input class="form-control" ng-model="formData.team" placeholder="Enter Team"></td>
+                    <td><button type="submit" class="btn btn-primary btn-mdm" ng-click="createAthlete()">Add</button></td>
+                    <!-- <td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td> -->
+                </tr>
+                <tr ng-repeat="athlete in athletes">
+                    <td style="text-align: center;"><img src='{{athlete.image}}' alt="" style="width: 120px;
+                        height: auto;
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 50%;"/></td>
+                    <td style="text-align: center; vertical-align: middle;">{{ athlete.name }}</td>
+                    <td style="text-align: center; vertical-align: middle;">{{ athlete.sport }}</td>
+                    <td style="text-align: center; vertical-align: middle;">{{ athlete.nationality }}</td>
+                    <td style="text-align: center; vertical-align: middle;">{{ athlete.association }}</td>
+                    <td style="text-align: center; vertical-align: middle;">{{ athlete.team }}</td>
+                    <td style="text-align: center; vertical-align: middle;"><button class="btn btn-danger btn-sm" ng-click="deleteAthlete(athlete._id)">Remove</button></td>
+                    <!-- <td><button class="btn btn-warning" ng-click="edit(athlete._id)">Edit</button></td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
